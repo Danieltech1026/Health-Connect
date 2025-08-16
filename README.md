@@ -36,12 +36,31 @@ The dashboard was built in **Power BI** to analyze **patient demographics, treat
     - Normal → **Success**  
     - Abnormal → **Failure**  
     - Inconclusive → **Inconclusive**  
-  - `Age Group`: Binned into categories → **0–17, 18–35, 36–55, 56–75, 76+**  
-
-- **New Measure (DAX)**  
+  - `Age Group`: Binned into categories → **0–17, 18–35, 36–55, 56–75, 76+**
+ 
+    - **New Measure (DAX)**  
   ```DAX
   Success Rate =
   DIVIDE(
     COUNTROWS(FILTER('Table', 'Table'[TreatmentOutcome] = "Success")),
     COUNTROWS(FILTER('Table', 'Table'[TreatmentOutcome] IN {"Success","Failure"}))
   )
+
+📈 Insights & Findings
+
+👶 Age 0–17 has the lowest medical condition count, while 👨‍🦳 age 36–55 has the highest.
+
+📉 Success rates vary significantly by diagnosis, highlighting areas where treatment protocols could be reviewed.
+
+⚖️ Gender distribution shows conditions that are more common in either male or female patients.
+
+🎯 Insurance provider and blood group slicers allow deeper segmentation of patient populations.
+
+🚀 Technologies Used
+
+Power BI → Dashboarding & Data Visualization
+
+DAX → Custom measures and calculated columns
+
+Excel / CSV → Raw data preprocessing
+
